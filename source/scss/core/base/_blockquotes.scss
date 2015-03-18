@@ -1,0 +1,22 @@
+/**
+ * Blockquote base styles
+ */
+
+/**
+ * Markup examples:
+ * -----------------------------------------------------------------------------
+
+<blockquote cite="http://">
+  <p>Quote</p>
+  <cite>Cite</cite>
+</blockquote>
+
+<blockquote>
+  <p>Quote</p>
+  <footer>Person - <cite>Source</cite></footer>
+</blockquote>
+
+ * -----------------------------------------------------------------------------
+ */
+
+blockquote { @include rem(margin, $element-spacing 0); }

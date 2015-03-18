@@ -1,0 +1,73 @@
+/**
+ * Font-size wrapper using our rem converter mixin
+ * Examples:
+ * @include font-size(14px);
+ * @include font-size(24px, 1.2);
+ * @include font-size(16px, 24px);
+ */
+@mixin font-size($args) {
+  $font-size: nth($args, 1);
+  @include rem(font-size, $font-size);
+  @if length($args) == 2 {
+    $line-height: nth($args, 2);
+    @if unitless($line-height) {
+      line-height: $line-height;
+    } @else {
+      @include rem(line-height, $line-height);
+    }
+  }
+}
+
+/**
+ * Responsive font size mixin
+ * Input arguments containing:
+ * 1. font size (px),
+ * 2. line height
+ * 3. layout name
+ *
+ * Font size is required. line height and layout are optional, but must be in
+ * order according to above
+ *
+ * Example:
+ * @include font-sizes(14px 1.5, 16px large, 18px 24px xlarge, 22px 1.2 xxlarge);
+ */
+@mixin font-sizes($args...) {
+  @each $arg in $args {
+    $font-size: nth($arg, 1);
+    $line-height: false;
+    $layout: false;
+
+    // Argument contains 2 values
+    @if length($arg) == 2 {
+      @if type-of(nth($arg, 2)) == string {
+        $layout: nth($arg, 2);
+      } @else {
+        $line-height: nth($arg, 2);
+      }
+    }
+
+    // Argument contains 3 values
+    @if length($arg) == 3 {
+      $line-height: nth($arg, 2);
+      $layout: nth($arg, 3);
+    }
+
+    // A layout is defined
+    @if $layout {
+      @include use-layout($layout) {
+        @if $line-height {
+          @include font-size($font-size $line-height);
+        } @else {
+          @include font-size($font-size);
+        }
+      }
+    // No layout defined
+    } @else {
+      @if $line-height {
+        @include font-size($font-size $line-height);
+      } @else {
+        @include font-size($font-size);
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="fragment" content="!">
+    <title>Susy Starter</title>
+    <link rel="stylesheet" href="/app/stylesheets/styles.css">
+  </head>
+  <body>
+
+    <section class="navigation">
+      <div class="navigation__container">
+        <a href="/">
+          <img src="/app/images/logo.jpg" width="100%">
+        </a>
+        <nav class="navigation__top">
+          <a class="navigation__item--search js-load" href="/#!/content/search.html"><span class="navigation__text">Search</span></a>
+          <a class="navigation__item--shop js-load" href="/#!/content/indkob.html"><span class="navigation__text">Indkøb</span></a>
+          <a class="navigation__item--plan js-load" href="/#!/content/madplan.html"><span class="navigation__text">Madplan</span></a>
+          <a class="navigation__item--meal js-load" href="/#!/content/maaltid.html"><span class="navigation__text">Måltid</span></a>
+        </nav>
+        <nav class="navigation__bottom">
+          <a class="navigation__item--profile js-load" href="/#!/about.html"><span class="navigation__text">Mig</span></a>
+          <a class="navigation__item--settings js-load" href="/#!/settings.html"><span class="navigation__text">Indstillinger</span></a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="content js-load-target"></section>
+
+    <footer></footer>
+
+    <!-- JavaScript at the bottom for fast page loading -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/app/javascripts/lib/jquery-1.11.1.js"><\/script>')</script>
+
+    <script src="/app/javascripts/main-min.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!--<script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>-->
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<?php
+//
+// Sitemaps https://support.google.com/webmasters/answer/183668
+//
+
+include 'content/config.php';
+include 'content/connect.php';
+include 'content/cache.php'; cache::medb();
+header('Content-Type: application/xml');
+
+echo '<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+    xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">';
+
+if ($stmt = $mysqli->prepare('SELECT url, GREATEST(updated, created) AS date FROM `' . table . '` ORDER BY `order` ASC')) {
+    $stmt->execute();
+    $stmt->bind_result($url, $date);
+
+    while ($stmt->fetch()) echo "\n    <url>\n        <loc>$scheme://$host$path$url</loc>\n        <lastmod>" . date('c', strtotime($date)) . "</lastmod>\n    </url>";
+
+    $stmt->free_result();
+    $stmt->close();
+}
+
+$mysqli->close();
+
+echo "\n</urlset>";

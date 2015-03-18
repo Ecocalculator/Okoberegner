@@ -1,0 +1,23 @@
+/**
+ * UI Components:
+ * Buttons
+ */
+
+@mixin button-base {
+  display: inline-block;
+  @include rem(padding, 6px 12px);
+}
+
+@mixin button($background-color, $color: false) {
+  background-color: $background-color;
+  @if $color {
+    color: $color;
+  }
+}
+
+%button-base { @include button-base; }
+
+%button {
+  @extend %button-base;
+  @include button($brand-color-primary, $white);
+}

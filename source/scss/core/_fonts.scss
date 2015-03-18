@@ -1,0 +1,83 @@
+/**
+ * Import all local fonts using bullet-proof method
+ */
+
+/**
+ * =============================================================================
+ * Icon font
+ * Using fonts for icons rather than svg only means IE8 and old Android (v4.3)
+ * is supported.
+ * Also using a font is similar to using a sprite, as only one HTTP request is
+ * needed.
+ */
+
+@font-face {
+  font-family: "icons";
+  src: url("../fonts/icons/icons.eot");
+  src: url("../fonts/icons/icons.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/icons/icons.woff") format("woff"),
+       url("../fonts/icons/icons.ttf") format("truetype"),
+       url("../fonts/icons/icons.svg#icons") format("svg");
+}
+
+/**
+ * =============================================================================
+ * Project font
+ * Use only one font family name for several imports, and set font weight/style
+ * on the individual imports.
+ */
+
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/roboto-thin/Roboto-Thin-webfont.eot");
+  src: url("../fonts/roboto-thin/Roboto-Thin-webfont.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/roboto-thin/Roboto-Thin-webfont.woff") format("woff"),
+       url("../fonts/roboto-thin/Roboto-Thin-webfont.ttf") format("truetype"),
+       url("../fonts/roboto-thin/Roboto-Thin-webfont.svg#robotothin") format("svg");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/roboto-light/Roboto-Light-webfont.eot");
+  src: url("../fonts/roboto-light/Roboto-Light-webfont.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/roboto-light/Roboto-Light-webfont.woff") format("woff"),
+       url("../fonts/roboto-light/Roboto-Light-webfont.ttf") format("truetype"),
+       url("../fonts/roboto-light/Roboto-Light-webfont.svg#robotolight") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/roboto-lightitalic/Roboto-LightItalic-webfont.eot");
+  src: url("../fonts/roboto-lightitalic/Roboto-LightItalic-webfont.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/roboto-lightitalic/Roboto-LightItalic-webfont.woff") format("woff"),
+       url("../fonts/roboto-lightitalic/Roboto-LightItalic-webfont.ttf") format("truetype"),
+       url("../fonts/roboto-lightitalic/Roboto-LightItalic-webfont.svg#lightitalic") format("svg");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/roboto-medium/Roboto-Medium-webfont.eot");
+  src: url("../fonts/roboto-medium/Roboto-Medium-webfont.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/roboto-medium/Roboto-Medium-webfont.woff") format("woff"),
+       url("../fonts/roboto-medium/Roboto-Medium-webfont.ttf") format("truetype"),
+       url("../fonts/roboto-medium/Roboto-Medium-webfont.svg#robotomedium") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/roboto-bold/Roboto-Bold-webfont.eot");
+  src: url("../fonts/roboto-bold/Roboto-Bold-webfont.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/roboto-bold/Roboto-Bold-webfont.woff") format("woff"),
+       url("../fonts/roboto-bold/Roboto-Bold-webfont.ttf") format("truetype"),
+       url("../fonts/roboto-bold/Roboto-Bold-webfont.svg#robotobold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}

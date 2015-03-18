@@ -1,0 +1,324 @@
+/**
+ * This file contains all project defaults. It's important that these are kept
+ * as default values, and should only be changed by overriding them in the
+ * _setting.scss in the root of the project.
+ *
+ *
+ * Don't panic. Have a coffee.
+ *
+ *         {
+ *      {   }  }
+ *       }_{ __{
+ *    .´{   }   }`.
+ *   (   }     {   )
+ *   |`-.._____..-'|
+ *   |             ;--.
+ *   |            (__  \
+ *   |             | )  )
+ *   |             |/  /
+ *   |             /  /
+ *   |            (  /
+ *   \             y'
+ *    `-.._____..-'
+ *
+ */
+
+/**
+ * =============================================================================
+ * General
+ */
+
+$debug : false !default;
+
+/**
+ * =============================================================================
+ * Colors
+ */
+
+// Brand colors
+$brand-color-primary    : #bada55 !default; // 1st
+$brand-color-secondary  : #c0ffee !default; // 2nd
+$brand-color-tertiary   : #b000b5 !default; // 3rd
+$brand-color-quaternary : #0ff1c3 !default; // 4th
+$brand-color-quinary    : #bad !default; // 5th
+$brand-color-senary     : #de1e7e !default; // 6th
+
+// Base colors
+$white : #fff !default;
+$black : #000 !default;
+
+// Text colors
+$color-text         : #555 !default;
+$color-display      : #333 !default;
+$color-discrete     : #999 !default;
+$color-selection    : #313054 !default;
+$color-selection-bg : #b7ecff !default;
+
+// Border colors
+$color-border : #ddd !default;
+
+// Link colors
+$color-link         : #015AA3 !default;
+$color-link-hover   : lighten($color-link, 15%) !default;
+
+// Background colors
+$color-highlight-primary    : #e7e7e7 !default;
+$color-highlight-secondary  : #f9f9f9 !default;
+
+/**
+ * =============================================================================
+ * Fonts and Typography
+ */
+
+// Font sizes
+// Named according to the System of Units prefixes
+// http://en.wikipedia.org/wiki/Metric_prefix#List_of_SI_prefixes
+$font-size-tera   : 48px !default;
+$font-size-giga   : 40px !default;
+$font-size-mega   : 32px !default;
+$font-size-kilo   : 26px !default;
+$font-size-hecto  : 22px !default;
+$font-size-deca   : 18px !default;
+$font-size-zero   : 16px !default;
+$font-size-deci   : 14px !default;
+$font-size-centi  : 12px !default;
+$font-size-milli  : 10px !default;
+$font-size-micro  : 8px !default;
+
+// Font families
+$base-font-primary    : "Helvetica Neue", sans-serif !default;
+$base-font-secondary  : serif !default;
+$base-font-tertiary   : monospace, serif !default;
+
+/**
+ * =============================================================================
+ * Element sizes
+ */
+
+$element-spacing: 24px !default;
+
+/**
+ * =============================================================================
+ * Screen resolution support
+ */
+
+$screen-resolution-ratio: 1.5 !default;
+
+/**
+ * =============================================================================
+ * Unit settings and fallbacks
+ */
+
+// Polyfill browsers not supporting REM (IE8)
+// http://caniuse.com/#search=rem
+// Used in the rem mixin
+$px-fallback-for-rem  : false !default;
+// Only output px value and no rem conversion
+$px-fallback-only     : false !default;
+
+/**
+ * =============================================================================
+ * Vertical rhythm stuff
+ * Defaults and functions/mixins found in core/base/helpers/_vertical-rythm.scss
+ */
+
+// Absolute height of body text, in pixels
+$base-font-size : $font-size-zero !default;
+
+// Absolute height of one line of type, in pixels
+$base-line-height : 24px !default;
+
+// The font unit to use when returning values in rhythm functions
+$rhythm-font-unit : px !default;
+
+// Allows the `adjust-font-size-to` mixin and the `lines-for-font-size` function
+// to round the line height to the nearest half line height instead of the
+// nearest integral line height to avoid large spacing between lines.
+$round-to-nearest-half-line : true !default;
+
+// Ensure there is at least this many pixels
+// of vertical padding above and below the text.
+$min-line-padding : 2px !default;
+
+// Vertical rhythm related border settings
+$rule-width : 1px !default;
+$rule-style : solid !default;
+$rule-color : $color-border !default;
+
+/**
+ * =============================================================================
+ * Susy grid settings
+ */
+
+// Importing em function for calculating grid sizes
+// Importing strip-units as dependency to em
+@import "helpers/strip-units";
+@import "helpers/em";
+
+// No Query fallback settings
+$breakpoint-no-queries : false !default; // true: don't print media queries
+$susy-media-fallback : false !default; // already set to false: https://github.com/ericam/susy/blob/master/sass/susy/language/susy/_breakpoint-plugin.scss#L5
+
+// Layouts use susy-breakpoint with susy-media
+// http://susy.readthedocs.org/en/latest/toolkit/#susy-breakpoint
+// - query: Media query set according to susy-media documentation
+// - no-query: Wether old ie should respond to that breakpoint
+// - layout: Column count used with susy grid
+$grid-layouts : (
+  xxsmall : (
+    query     : max-width em(319px),
+    no-query  : false,
+    layout    : 1
+    ),
+  xsmall-down : (
+    query     : max-width em(399px),
+    no-query  : false,
+    layout    : 4
+    ),
+  xsmall : (
+    query     : em(320px),
+    no-query  : true,
+    layout    : 4
+    ),
+  xsmall-only : (
+    query     : em(320px 399px),
+    no-query  : false,
+    layout    : 4
+    ),
+  small-down : (
+    query     : max-width em(479px),
+    no-query  : false,
+    layout    : 4
+    ),
+  small : (
+    query     : em(400px),
+    no-query  : true,
+    layout    : 4
+    ),
+  small-only : (
+    query     : em(400px 479px),
+    no-query  : false,
+    layout    : 4
+    ),
+  medium-down : (
+    query     : max-width em(767px),
+    no-query  : false,
+    layout    : 8
+    ),
+  medium : (
+    query     : em(480px),
+    no-query  : true,
+    layout    : 8
+    ),
+  medium-only : (
+    query     : em(480px 767px),
+    no-query  : false,
+    layout    : 8
+    ),
+  large-down : (
+    query     : max-width em(999px),
+    no-query  : false,
+    layout    : 12
+    ),
+  large : (
+    query     : em(768px),
+    no-query  : true,
+    layout    : 12
+    ),
+  large-only : (
+    query     : em(768px 999px),
+    no-query  : false,
+    layout    : 12
+    ),
+  xlarge-down : (
+    query     : max-width em(1280px),
+    no-query  : false,
+    layout    : 12
+    ),
+  xlarge : (
+    query     : em(1000px),
+    no-query  : true,
+    layout    : 12
+    ),
+  xlarge-only : (
+    query     : em(1000px 1280px),
+    no-query  : true,
+    layout    : 12
+    ),
+  xxlarge : (
+    query     : em(1281px),
+    no-query  : false,
+    layout    : 12
+    )
+) !default;
+
+// Custom grid variables for use with Susy grid
+$grid-container-width : em(1260px) !default; // Other popular sizes: | 1140px | 960px
+$grid-padding         : em(10px) !default;
+
+// Susy
+// http://susy.readthedocs.org/en/latest/settings/
+//
+// NOTE:
+// The $susy variable is set in the Susy framework, so we can't override it
+// with the !default flag.
+// And since the project settings are importet before this partial, we cannot
+// set a value for it here.
+//
+// $susy : (
+//   columns: 1,
+//   gutters: 1/4,
+//   gutter-position: split, // split, inside, after, before
+//   container: $grid-container-width
+// );
+
+/**
+ * =============================================================================
+ * Overlay
+ */
+
+// Use z-index() function
+// .selector {
+//   z-index: z-index(tooltip);
+// }
+$layers : (
+  offcanvas: 1,
+  dropdown: 10,
+  tooltip: 15,
+  lightbox: 100,
+  ridiculous: 9999
+) !default;
+
+
+/**
+ * =============================================================================
+ * Icons
+ */
+
+// Icon font family
+$icon-font : "icons" !default;
+
+// --------
+// Icon map
+// Properties:
+// name | character
+$font-icons : (
+  cart     : "\e93a",
+  calender : "\e953",
+  profile  : "\e971",
+  search   : "\e986",
+  settings : "\e994",
+  food     : "\e9a3"
+) !default;
+
+
+/**
+ * =============================================================================
+ * Sprites
+ * (Use icon font if possible)
+ */
+
+// $sprites: sprite-map("sprites/*.png",
+//  $sprites-arrow-position: 100%,
+//  $sprites-arrow-spacing: 50px
+// ) !default;

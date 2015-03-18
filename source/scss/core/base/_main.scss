@@ -1,0 +1,27 @@
+/**
+ * Misc. base styles.
+ * <body> styles and so on...
+ */
+
+// Setting font size on root element
+//
+// IMPORTANT:
+// This is only applicable when not using vertical rhythm, as this is
+// essentially the same output as the establish-baseline mixin
+// (see core/helpers/_vertical-rhythm.scss)
+html {
+  $new-font-size: $base-font-size / $browser-default-font-size * 100%;  // eg. 16px ÷ 16px * 100%
+  // Only set the font size if it differs from the browser default
+  @if $new-font-size != 100% {
+    font-size: $new-font-size;
+  }
+}
+
+body {
+  color: $color-text;
+  font-family: $base-font-primary;
+  font-size: em($base-font-size);
+  font-weight: 300;
+  line-height: $base-line-height/$base-font-size; // Will be overridden by vertical rhythm if activated
+  margin: 0 auto;
+}

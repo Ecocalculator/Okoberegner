@@ -1,0 +1,8 @@
+@function z-index($name) {
+  @if map-has-key($layers, $name) {
+    @return map-get($layers, $name);
+  } @else {
+    @return 1;
+    @warn "The z-index layout '#{$name}' doesn't exist in $layers";
+  }
+}

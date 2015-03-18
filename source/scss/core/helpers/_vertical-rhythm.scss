@@ -1,0 +1,145 @@
+// Source: https://gist.github.com/ry5n/2026666
+// NOTE:
+// - The section "Configurable variables" has been moved to core/_defaults.scss
+// - px-to-rem removed in favor of rem mixin in _rem.scss
+// - custom rhythm-rule mixin has been added
+// - lines-for-font-size renamed to rhythm-lines
+// - set-font-size renamed to rhythm-font-size
+
+
+// Constants
+// ⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻
+
+// Most (all?) browsers use a default of 16px for type.
+$browser-default-font-size: 16px;
+
+// The height of one line of type, in rems.
+$rem-line-height: $base-line-height / $base-font-size * 1rem;
+
+
+// Moving parts
+// ⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻⁻
+
+// Return the height of n baselines.
+// Returns px or rem based on the value of $rhythm-font-unit.
+@function rhythm($lines: 1) {
+  $line-height: if($rhythm-font-unit != px, $rem-line-height, $base-line-height);
+  @return $line-height * $lines;
+}
+
+// Calculate the number of baselines required to accomodate a
+// given pixel-based font size.
+@function rhythm-lines($font-size) {
+  $lines: if(
+    $round-to-nearest-half-line,
+    ceil(2 * $font-size / $base-line-height) / 2,
+    ceil($font-size / $base-line-height)
+  );
+  @if $lines * $base-line-height - $font-size < $min-line-padding * 2 {
+    $lines: $lines + if($round-to-nearest-half-line, 0.5, 1);
+  }
+  @return $lines;
+}
+
+// Set type size and baseline grid on the root element.
+@mixin establish-baseline {
+  html {
+    $new-font-size: $base-font-size / $browser-default-font-size * 100%;  // eg. 16px ÷ 16px * 100%
+    // Only set the font size if it differs from the browser default
+    @if $new-font-size != 100% {
+      font-size: $new-font-size;
+    }
+    @include set-leading(1);
+  }
+}
+
+// Set the font size to the specified number of pixels while
+// maintaining the vertical rhythm.
+//
+// $to-size - Desired font size, in pixels
+// $lines   - Desired leading, expressed in baselines (can fractional)
+@mixin rhythm-font-size($to-size, $lines: rhythm-lines($to-size)) {
+  @include rem(font-size, $to-size);
+  @include set-leading($lines);
+}
+
+// Adjust the leading to a new multiple of the baseline
+@mixin set-leading($lines) {
+  @include rem(line-height, $base-line-height * $lines);
+}
+
+// Apply leading whitespace
+@mixin leader($lines: 1, $property: margin) {
+  @include rem(#{$property}-top, rhythm($lines));
+}
+
+// Apply trailing whitespace
+@mixin trailer($lines: 1, $property: margin) {
+  @include rem(#{$property}-bottom, rhythm($lines));
+}
+
+// Apply leading whitespace as padding
+@mixin padding-leader($lines: 1) {
+  @include leader($lines, padding);
+}
+
+// Apply trailing whitespace as padding
+@mixin padding-trailer($lines: 1) {
+  @include trailer($lines, padding);
+}
+
+// Apply leading and trailing whitespace together.
+// Defaults to equal margins above and below and no padding.
+@mixin rhythm-spacing($leader: 1, $trailer: $leader, $padding-leader: 0, $padding-trailer: $padding-leader) {
+  @include leader($leader);
+  @include trailer($trailer);
+  @include padding-leader($padding-leader);
+  @include padding-trailer($padding-trailer);
+}
+
+// Apply a border to one side of an element without throwing off
+// the vertical rhythm. The available space ($lines) must be
+// greater than the width of your border.
+@mixin side-rhythm-border($side, $lines: 1, $border: $rule-width $rule-style $rule-color) {
+  $width: nth($border, 1);
+  $style: nth($border, 2);
+  $color: nth($border, 3);
+  @include rem(border-#{$side}, $width $style $color);
+
+  $padding: $base-line-height * $lines - $width;
+  @include rem(padding-#{$side}, $padding);
+}
+
+// Create horizontal line by applying height and background to an element.
+// Meant to be used on <hr> elements and doesn't throw off the vertical rhythm
+@mixin rhythm-rule($lines: 3, $rule: $rule-width $rule-color) {
+  $width: nth($rule, 1);
+  $color: nth($rule, 2);
+  background-color: $color;
+  @include rem(height, $width);
+
+  $margin: ( $base-line-height * $lines - $width ) / 2;
+  @include rem(margin-bottom, $margin);
+  @include rem(margin-top, $margin);
+}
+
+// Apply a leading rhythm border
+@mixin leading-border($lines: 1, $border: $rule-width $rule-style $rule-color) {
+  @include side-rhythm-border(top, $lines, $border);
+}
+
+// Apply a trailing rhythm border
+@mixin trailing-border($lines: 1, $border: $rule-width $rule-style $rule-color) {
+  @include side-rhythm-border(bottom, $lines, $border);
+}
+
+// Apply borders equally to all sides with padding to maintain the vertical rhythm
+@mixin rhythm-borders($lines: 1, $border: $rule-width $rule-style $rule-color) {
+  $width: nth($border, 1);
+  $style: nth($border, 2);
+  $color: nth($border, 3);
+  @include rem(border, $width $style $color);
+
+  $padding: $base-line-height * $lines - $width;
+  @include rem(padding, $padding);
+}

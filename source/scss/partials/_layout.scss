@@ -1,0 +1,60 @@
+/**
+ * General layouts
+ * Individual modules should have their own partial
+ */
+
+body {
+  @if $debug {
+    &:before {
+      background: #8C8C8C;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 2px;
+      color: #FFF;
+      content: "layout: xxsmall";
+      display: block;
+      font-family: monospace;
+      font-size: 10px;
+      padding: 0.1em 0.2em;
+      position: fixed;
+        left: 0;
+        top: 0;
+        z-index: z-index(ridiculous);
+
+      @each $layout in xsmall, small, medium, large, xlarge, xxlarge {
+        @include use-layout($layout) {
+          content: "layout: #{$layout}";
+        }
+      }
+    }
+  }
+}
+
+.clearfix { @extend %clearfix; }
+
+.section {}
+
+.content {
+  width: 100%;
+
+  //.is-loading { background-color: pink; }
+  @include use-layout(large) {
+    @include span(11 of 12);
+    @include push(1);
+  }
+}
+
+.container {
+  @include container;
+
+  // Adding grid padding from tablet layout
+  @include use-layout(medium) {
+    padding: {
+      left: $grid-padding;
+      right: $grid-padding;
+    }
+  }
+
+  // Manual min-width for ie8
+  // Based on xlarge's query min-width
+  @if $susy-media-fallback { min-width: 1000px; }
+}
