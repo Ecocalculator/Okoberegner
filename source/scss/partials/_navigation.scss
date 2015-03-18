@@ -5,18 +5,16 @@
 
 .navigation {
   background-color: lighten($black, 25%);
-  display: none;
   font-family: "roboto";
   font-size: 12px;
   font-weight: 200;
   height: 100%;
-  position: fixed;
   overflow: hidden;
-
-  @include use-layout(large) {
-    display: block;
-    width: span(1 of 12);
-  }
+  position: fixed;
+  
+  @include use-layout(medium) { width: span(1 of 8); }
+  
+  @include use-layout(large) { width: span(1 of 12); }
 
   &__top { margin-top: 20px; }
 
@@ -34,17 +32,11 @@
     text-align: center;
     @include transition(color, 0.3s, ease-in-out);
 
-    @include use-layout(xlarge) { color: darkent($white, 10%); }
-
     &.is-active,
     &:hover {
-      color: lighten($black, 25%);
+      color: $white;
 
-      @include use-layout(xlarge) {
-        color: $white;
-
-        .navigation__text { color: $white; }
-      }
+      .navigation__text { color: $white; }
     }
 
     &:after {
@@ -100,8 +92,7 @@
   }
 
   &__bottom {
-    margin-top: -192px;
     position: relative;
-    top: 100%;
+    bottom: 0;
   }
 }
