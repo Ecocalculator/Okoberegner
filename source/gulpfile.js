@@ -1,14 +1,19 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     connect = require('gulp-connect'),
     livereload = require('gulp-livereload');
 
+function onError(err) {
+  console.log(err);
+}
+
 // Sass Task 
 gulp.task('sass', function() {
-  gulp.src('./scss/{,*/}*.{scss,sass}')
+  return gulp.src('./scss/{,*/}*.{scss,sass}')
     .pipe(sourcemaps.init())
     .pipe(sass({
       errLogToConsole: true
@@ -35,7 +40,7 @@ gulp.task('html', function () {
 
 // Javascript task
 gulp.task('scripts', function() {
-  gulp.src(['javascripts/*.js', 'javascripts/partials/*.js'])
+  return gulp.src(['javascripts/*.js', 'javascripts/partials/*.js'])
     .pipe(concat('main-min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('../app/javascripts'))
