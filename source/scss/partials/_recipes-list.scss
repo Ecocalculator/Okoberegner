@@ -1,0 +1,46 @@
+/**
+ * Recipes list
+ */
+
+.recipes-list {
+  
+  &__item {
+    overflow: hidden;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 320px;
+    max-width: 480px;
+    max-height: 360px;
+    width: 48%;
+    height: auto;
+    background: #3085a3;
+    text-align: center;
+    cursor: pointer;
+
+    @include use-layout(medium) {
+      height: span(4 of 8);
+      @include span(4 of 8);
+    }
+  
+    @include use-layout(large) {
+      height: span(4 of 12);
+      @include span(4 of 12);
+    }
+    
+    @include use-layout(xxlarge) {
+      height: span(3 of 12);
+      @include span(3 of 12);
+    }
+  }
+
+  &__picture {
+    max-width: none;
+    height: 400px;
+    backface-visibility: hidden;
+    @include transition(opacity, 1s, ease-in-out);
+  }
+
+  &__link { display: block; }
+}
