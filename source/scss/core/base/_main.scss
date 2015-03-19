@@ -24,4 +24,5 @@ body {
   font-weight: 300;
   line-height: $base-line-height/$base-font-size; // Will be overridden by vertical rhythm if activated
   margin: 0 auto;
+  background-color: lighten($black, 15%);
 }

@@ -37,6 +37,11 @@ body {
   width: 100%;
 
   //.is-loading { background-color: pink; }
+  @include use-layout(medium) {
+    @include span(7 of 8);
+    @include push(1);
+  }
+
   @include use-layout(large) {
     @include span(11 of 12);
     @include push(1);
