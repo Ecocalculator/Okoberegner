@@ -63,14 +63,6 @@ App.Load = (function($) {
       
     }
     else {
-      // var url = /\/content\/(\w+)/;
-      // var match = url.exec(document.URL);
-
-      // console.log(match)
-
-      // if( match !== null ) {
-      //   dom.$target.html( match[1] );
-      // }
       var url = location.hash.replace( '#!', '' );
 
       dom.$target.addClass( selectors.loading );
@@ -81,7 +73,6 @@ App.Load = (function($) {
         success: function( html ) {
           dom.$target.html( html );
           dom.$target.removeClass( selectors.loading );
-          //window.history.pushState({}, '', url);
         }
       });
     }
