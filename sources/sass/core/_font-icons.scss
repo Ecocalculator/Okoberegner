@@ -1,0 +1,88 @@
+/**
+ * =============================================================================
+ * Icon font
+ * Using fonts for icons rather than svg only means IE8 and old Android (v4.3)
+ * is supported.
+ * Also using a font is similar to using a sprite, as only one HTTP request is
+ * needed.
+ *
+ * Usage:
+ * Just add svg icon to the sources/fonticons folder and this partial will automatically
+ * update when compiled
+ */
+
+
+@font-face {
+  font-family: "font-icons";
+  src: font-url('icons/font-icons.eot');
+  src: font-url('icons/font-icons.eot?#iefix') format('eot'),
+    font-url('icons/font-icons.woff') format('woff'),
+    font-url('icons/font-icons.ttf') format('truetype'),
+    font-url('icons/font-icons.svg#font-icons') format('svg');
+}
+
+// ---------------------------------------------------------------------------
+// Font icon base styles
+
+%font-icon-base {
+  font: {
+    family: "font-icons";
+    style: normal;
+    variant: normal;
+    weight: normal;
+  }
+  height: 1em;
+  line-height: 1em;
+  speak: none;
+  text-decoration: none;
+  text-indent: 0; // avoiding offset in conjuction with %icon-only
+  text-transform: none;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+// ---------------------------------------------------------------------------
+// Font icons map
+
+$icons : (
+
+  calendar : "\E001",
+  cart : "\E002",
+  cog : "\E003",
+  search : "\E004",
+  spoon-knife : "\E005",
+  user : "\E006",
+);
+
+// ---------------------------------------------------------------------------
+// Font icon mixin
+
+@mixin font-icon($filename, $insert: after) {
+  &:#{$insert} {
+    @extend %font-icon-base;
+    content: map-get($icons, $filename);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Font icon examples
+
+.font-icon--calendar {
+  @include font-icon(calendar);
+}
+.font-icon--cart {
+  @include font-icon(cart);
+}
+.font-icon--cog {
+  @include font-icon(cog);
+}
+.font-icon--search {
+  @include font-icon(search);
+}
+.font-icon--spoon-knife {
+  @include font-icon(spoon-knife);
+}
+.font-icon--user {
+  @include font-icon(user);
+}

@@ -1,0 +1,11 @@
+@function em( $px, $base: $base-font-size ) {
+  @if type-of( $px ) == "list" {
+    $output: ();
+    @each $value in $px {
+      $output: append($output, em( $value, $base ));
+    }
+    @return $output;
+  } @else {
+    @return strip-units($px) / strip-units($base) * 1em;
+  }
+}

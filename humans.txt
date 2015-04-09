@@ -1,0 +1,36 @@
+/* TEAM */
+Company   : Økobregner
+Site      : 
+Email     : 
+Phone     : 
+Twitter   : 
+Location  : Aarhus, Denmark
+
+Designer  :
+Site      :
+Twitter   :
+Location  :
+
+Frontend Developer  :
+Site                :
+Twitter             :
+Location            :
+
+Developer :
+Site      :
+Twitter   :
+Location  :
+
+PM        :
+Site      :
+Twitter   :
+Location  :
+
+/* SITE */
+Site Name   :
+Site URL    :
+Language    : Danish
+Platform    :
+Standards   : HTML5, CSS3, BEM
+Components  : HTML5Shiv, Normalize, jQuery
+Tools       : SASS, Susy

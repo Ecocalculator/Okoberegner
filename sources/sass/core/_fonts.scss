@@ -1,0 +1,65 @@
+/**
+ * Import all local fonts using bullet-proof method
+ */
+
+/**
+ * =============================================================================
+ * Project font
+ * Use only one font family name for several imports, and set font weight/style
+ * on the individual imports.
+ */
+
+@font-face {
+  font-family: "roboto";
+  src: font-url("roboto-thin/Roboto-Thin-webfont.eot");
+  src: font-url("roboto-thin/Roboto-Thin-webfont.eot?#iefix") format("embedded-opentype"),
+       font-url("roboto-thin/Roboto-Thin-webfont.woff") format("woff"),
+       font-url("roboto-thin/Roboto-Thin-webfont.ttf") format("truetype"),
+       font-url("roboto-thin/Roboto-Thin-webfont.svg#robotothin") format("svg");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: font-url("roboto-light/Roboto-Light-webfont.eot");
+  src: font-url("roboto-light/Roboto-Light-webfont.eot?#iefix") format("embedded-opentype"),
+       font-url("roboto-light/Roboto-Light-webfont.woff") format("woff"),
+       font-url("roboto-light/Roboto-Light-webfont.ttf") format("truetype"),
+       font-url("roboto-light/Roboto-Light-webfont.svg#robotolight") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: font-url("roboto-lightitalic/Roboto-LightItalic-webfont.eot");
+  src: font-url("roboto-lightitalic/Roboto-LightItalic-webfont.eot?#iefix") format("embedded-opentype"),
+       font-url("roboto-lightitalic/Roboto-LightItalic-webfont.woff") format("woff"),
+       font-url("roboto-lightitalic/Roboto-LightItalic-webfont.ttf") format("truetype"),
+       font-url("roboto-lightitalic/Roboto-LightItalic-webfont.svg#lightitalic") format("svg");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: font-url("roboto-medium/Roboto-Medium-webfont.eot");
+  src: font-url("roboto-medium/Roboto-Medium-webfont.eot?#iefix") format("embedded-opentype"),
+       font-url("roboto-medium/Roboto-Medium-webfont.woff") format("woff"),
+       font-url("roboto-medium/Roboto-Medium-webfont.ttf") format("truetype"),
+       font-url("roboto-medium/Roboto-Medium-webfont.svg#robotomedium") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: font-url("roboto-bold/Roboto-Bold-webfont.eot");
+  src: font-url("roboto-bold/Roboto-Bold-webfont.eot?#iefix") format("embedded-opentype"),
+       font-url("roboto-bold/Roboto-Bold-webfont.woff") format("woff"),
+       font-url("roboto-bold/Roboto-Bold-webfont.ttf") format("truetype"),
+       font-url("roboto-bold/Roboto-Bold-webfont.svg#robotobold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}

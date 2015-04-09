@@ -1,0 +1,38 @@
+// REM function
+@function rem($px-value) {
+  $baseline-rem: strip-units($base-font-size);
+  @return strip-units($px-value) / $baseline-rem * 1rem;
+}
+
+// Rem mixin with pixel fallback
+@mixin rem($property, $px-values, $force-px-fallback: false) {
+  // Only output px value if requested through
+  // global variable or property
+  @if $px-fallback-for-rem or $force-px-fallback {
+    // Print the first line in pixel values
+    #{$property}: $px-values;
+  }
+
+  // Allow some stylesheets to only output px value
+  @if not $px-fallback-only {
+    // If there is only one (numeric) value, return the property/value line for it.
+    @if type-of($px-values) == "number" {
+      #{$property}: rem($px-values);
+    } @else {
+      // Create an empty list that we can dump values into
+      $rem-values: unquote("");
+
+      @each $value in $px-values {
+        // If the value is zero, a string or a color, leave it be.
+        @if $value == 0 or type-of($value) == "string" or type-of($value) == "color" {
+          $rem-values: append($rem-values, $value); }
+        @else {
+          $rem-values: append($rem-values, rem($value));
+        }
+      }
+
+      // Return the property and its list of converted values
+      #{$property}: $rem-values;
+    }
+  }
+}

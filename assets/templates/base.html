@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>     <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if lte IE 9]>     <html lang="en" class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Scaffold - Base</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Meta Description">
+
+    <link href="../stylesheets/main.css" rel="stylesheet">
+    <link href="../stylesheets/dev.css" rel="stylesheet">
+    <link href="../stylesheets/print.css" rel="stylesheet" media="print">
+    <!--[if lt IE 9]>
+      <link href="../stylesheets/ie-lt9.css" rel="stylesheet">
+      <script src="../javascripts/lib/html5shiv-3.7.2.js"></script>
+    <![endif]-->
+
+    <!-- Avoiding the FOUC v3.0 (.no-js => .js) -->
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <h1 id="base" class="base__section-header">Project base</h1>
+        <p>To use development assets paths, run</p>
+        <pre>
+$ compass compile --http-path "../"
+// or
+$ compass watch --http-path "../"
+</pre>
+
+        <h2>Table of contents</h2>
+        <ol>
+          <li><a href="#base">Project base</a></li>
+          <li><a href="#colors">Colors</a></li>
+          <li><a href="#typography">Typography</a>
+            <ol>
+              <li><a href="#typography-1">Headers EN</a></li>
+              <li><a href="#typography-2">Headers DK</a></li>
+              <li><a href="#typography-3">Body text with various html elements</a></li>
+            </ol>
+          <li><a href="#inline">Inline elements</a></li>
+          <li><a href="#block">Block elements</a>
+            <ol>
+              <li><a href="#block-1">Blockquote</a></li>
+              <li><a href="#block-2">Figure</a></li>
+              <li><a href="#block-3">Pre (code)</a></li>
+              <li><a href="#block-4">Lists</a></li>
+              <li><a href="#block-5">Definition list</a></li>
+            </ol>
+          </li>
+          </li>
+          <li><a href="#forms">Form elements</a></li>
+          <li><a href="#tables">Tables</a></li>
+          <li><a href="#components">UI Components</a>
+            <ol>
+              <li><a href="#components-1">Buttons</a></li>
+              <li><a href="#components-2">Navigation</a></li>
+              <li><a href="#components-3">Media</a></li>
+            </ol>
+          </li>
+          <li><a href="#icons">Icons</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h1 id="colors" class="base__section-header">Colors</h1>
+        <div class="color-tile--primary"></div>
+        <div class="color-tile--secondary"></div>
+        <div class="color-tile--tertiary"></div>
+        <div class="color-tile--quaternary"></div>
+        <div class="color-tile--quinary"></div>
+        <div class="color-tile--senary"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h1 id="typography" class="base__section-header">Typography</h1>
+        <h2 id="typography-1" class="base__section-subheader">Headers EN</h2>
+
+        <h1>The quick brown fox jumps over the lazy dog</h1>
+        <h2>The quick brown fox jumps over the lazy dog</h2>
+        <h3>The quick brown fox jumps over the lazy dog</h3>
+        <h4>The quick brown fox jumps over the lazy dog</h4>
+        <h5>The quick brown fox jumps over the lazy dog</h5>
+        <h6>The quick brown fox jumps over the lazy dog</h6>
+
+        <h2 id="typography-2" class="base__section-subheader">Headers DK</h2>
+
+        <h1>Quizdeltagerne spiste jordbær med fløde, mens cirkusklovnen Walther spillede på xylofon.</h1>
+        <h2>Quizdeltagerne spiste jordbær med fløde, mens cirkusklovnen Walther spillede på xylofon.</h2>
+        <h3>Quizdeltagerne spiste jordbær med fløde, mens cirkusklovnen Walther spillede på xylofon.</h3>
+        <h4>Quizdeltagerne spiste jordbær med fløde, mens cirkusklovnen Walther spillede på xylofon.</h4>
+        <h5>Quizdeltagerne spiste jordbær med fløde, mens cirkusklovnen Walther spillede på xylofon.</h5>
+        <h6>Quizdeltagerne spiste jordbær med fløde, mens cirkusklovnen Walther spillede på xylofon.</h6>
+
+        <h2 id="typography-3" class="base__section-subheader">Body text with various html elements</h2>
+
+        <h1>Main header (h1) of the section</h1>
+        <p>Lorem ipsum <em>emphasised text</em> dolor sit amet, <strong>strong text</strong>
+        consectetur adipisicing elit, <abbr title="">abbreviated text</abbr> sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut
+        <q>quoted text</q> enim ad minim veniam, quis nostrud exercitation <a href="/">link text</a>
+        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+        <ins>inserted text</ins> irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat <code>code text</code> cupidatat
+        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <p>Suspendisse rhoncus, est ac sollicitudin viverra, leo orci sagittis massa, sed condimentum <acronym title="">acronym text</acronym> est tortor a lectus. Curabitur porta feugiat ullamcorper. Integer lacinia mi id odio faucibus eget tincidunt nisl iaculis. Nam adipiscing hendrerit turpis, et porttitor felis sollicitudin et. Donec dictum massa ac neque accumsan tempor. Cras aliquam, ipsum sit amet laoreet hendrerit, purus <del>deleted text</del> sapien convallis dui, et porta leo ipsum ac nunc. Nullam ornare porta dui ac semper. Cras aliquam laoreet hendrerit. Quisque vulputate dolor eget mi porta vel porta nisl pretium. Vivamus non leo magna, quis imperdiet risus. Morbi tempor risus placerat tellus imperdiet fringilla.</p>
+
+        <h2>Most longer text sections will have secondary headers (h2)</h2>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel fermentum ante. Sed mattis lectus magna. Quisque sodales, lorem vitae vestibulum tincidunt, massa justo varius elit, et pretium mauris dui ut nibh. In hac habitasse platea dictumst. Nullam libero lacus, sollicitudin id nunc quis, euismod maximus risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at laoreet lacus, sed hendrerit ligula. Donec posuere lacus purus, nec commodo velit lobortis et.</p>
+
+        <hr>
+
+        <blockquote class="blockquote">
+          <p>I am not one who was born in the possession of knowledge; I am one who is fond of antiquity, and earnest in seeking it there.</p>
+          <cite>Confucius <a href="#" title="Confucius, The Confucian Analects">The Confucian Analects,  (551 BC - 479 BC)</a></cite>
+        </blockquote>
+
+        <p>Extended paragraph. <a href="http://lipsum.com/" target="_blank" title="Lorem ipsum">Lorem ipsum</a> dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+        <h3>Tertiary headers (h3) are more uncommon</h3>
+        <p>Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <ol>
+          <li>Unus</li>
+          <li>Duo</li>
+          <li>Tres</li>
+          <li>Quattuor</li>
+        </ol>
+
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.</p>
+
+        <h1 id="inline" class="base__section-header">Inline elements</h1>
+
+        <p>
+          I am <a href="http://devkick.com/lab/tripoli/sample.php?abc123">the &lt;a&gt; tag</a> example<br>
+
+          I am <abbr title="test">the &lt;abbr&gt; tag</abbr> example<br>
+
+          I am <acronym>the &lt;acronym&gt; tag</acronym> example<br>
+          I am <b>the &lt;b&gt; tag</b> example<br>
+          I am <big>the &lt;big&gt; tag</big> example<br>
+
+          I am <cite>the &lt;cite&gt; tag</cite> example<br>
+
+          I am <code>the &lt;code&gt; tag</code> example<br>
+          I am <del>the &lt;del&gt; tag</del> example<br>
+          I am <dfn>the &lt;dfn&gt; tag</dfn> example<br>
+
+          I am <em>the &lt;em&gt; tag</em> example<br>
+
+          I am <font face="verdana">the &lt;font&gt; tag</font> example<br>
+          I am <i>the &lt;i&gt; tag</i> example<br>
+          I am <ins>the &lt;ins&gt; tag</ins> example<br>
+
+          I am <kbd>the &lt;kbd&gt; tag</kbd> example<br>
+
+          I am <q>the &lt;q&gt; tag <q>inside</q> a &lt;q&gt; tag</q> example<br>
+          I am <s>the &lt;s&gt; tag</s> example<br>
+          I am <samp>the &lt;samp&gt; tag</samp> example<br>
+
+          I am <small>the &lt;small&gt; tag</small> example<br>
+          I am <span>the &lt;span&gt; tag</span> example<br>
+          I am <strike>the &lt;strike&gt; tag</strike> example<br>
+          I am <strong>the &lt;strong&gt; tag</strong> example<br>
+
+          I am <sub>the &lt;sub&gt; tag</sub> example<br>
+          I am <sup>the &lt;sup&gt; tag</sup> example<br>
+          I am <tt>the &lt;tt&gt; tag</tt> example<br>
+          I am <var>the &lt;var&gt; tag</var> example<br>
+
+          I am <u>the &lt;u&gt; tag</u> example
+        </p>
+
+        <h1 id="block" class="base__section-header">Block elements</h1>
+
+        <h2 id="block-1" class="base__section-subheader">Blockquote</h2>
+        <p><a href="http://www.w3schools.com/tags/tag_blockquote.asp" target="_blank" title="HTML <blockquote> Tag">HTML &lt;blockquote&gt; Tag</a></p>
+
+        <blockquote class="blockquote" cite="http://www.brainyquote.com/quotes/topics/topic_science.html">
+          <p>Only two things are infinite, the universe and human stupidity, and I'm not sure about the former.</p>
+          <footer>
+            Albert Einstein - <cite>brainyquote.com</cite>
+          </footer>
+        </blockquote>
+
+        <h2 id="block-2" class="base__section-subheader">Figure</h2>
+        <p><a href="http://www.w3schools.com/tags/tag_figure.asp" target="_blank" title="HTML <figure> Tag">HTML &lt;figure&gt; Tag</a></p>
+
+        <figure>
+          <img title="HTML5 Semantic Elements" src="data:image/gif;base64,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">
+          <figcaption>HTML5 offers new semantic elements to define different parts of a web page</figcaption>
+        </figure>
+
+        <h2 id="block-3" class="base__section-subheader">Pre (code)</h2>
+        <p><a href="http://www.w3schools.com/tags/tag_pre.asp" target="_blank" title="HTML <pre> Tag">HTML &lt;pre&gt; Tag</a></p>
+
+<pre>
+&lt;section&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Section header goes here&lt;/h1&gt;
+  &lt;/header&gt;
+  &lt;p&gt;Some section content ipsum dolor sit amet.&lt;/p&gt;
+  &lt;h2&gt;Oh, and a subheader&lt;/h2&gt;
+&lt;/section&gt;
+</pre>
+
+        <h2 id="block-4" class="base__section-subheader">Lists</h2>
+
+        <ol>
+          <li>Marie Curie</li>
+          <li>Alan Turing</li>
+          <li>Niels Bohr</li>
+          <li>Max Planck</li>
+          <li>Charles Darwin</li>
+          <li>Leonardo da Vinci</li>
+          <li>Galileo Galilei</li>
+          <li>Nikola Tesla
+            <ol>
+              <li>The Tesla museum was helped by a cartoon (The Oatmeal)</li>
+                <ol>
+                  <li>Established: December 5, 1952</li>
+                  <li>Location: Krunska 51, Belgrade</li>
+                  <li>Type: science museum</li>
+                  <li>Director: Vladimir Jelenković</li>
+                  <li>Curator: Bratislav Stojiljković</li>
+                  <li>Website: tesla-museum.org</li>
+                </ol>
+              <li>Tesla was an environmentalist</li>
+              <li>Tesla died a broke humanitarian</li>
+              <li>Tesla rarely slept and suffered from OCD</li>
+              <li>Many of Tesla's inventions were classified</li>
+            </ol>
+          </li>
+          <li>Albert Einstein</li>
+          <li>Isaac Newton</li>
+        </ol>
+
+        <ul>
+          <li>Kickstarter</li>
+            <ul>
+              <li>Exploding Kittens
+                <ul>
+                  <li>Elan Lee</li>
+                  <li>The Oatmeal</li>
+                  <li>Shane Small</li>
+                </ul>
+              </li>
+              <li>Prynt: the first instant camera case for iPhone and Android</li>
+              <li>Shadowrun: Hong Kong</li>
+              <li>Heroes Wanted: The Stuff of Legend</li>
+              <li>EPIC DICE Tower Defense</li>
+              <li>Qmote: The Water-Resistant Internet Remote for Smartphones</li>
+              <li>Among the Stars: Revival</li>
+              <li>Conan</li>
+              <li>Moment Case- World's Best iPhone Case for Mobile Photography</li>
+              <li>Wishbone: The World's Smallest Smart Thermometer</li>
+            </ul>
+          <li>Indiegogo</li>
+          <li>Crowdfunder</li>
+          <li>RocketHub</li>
+          <li>Crowdrise</li>
+          <li>Somolend</li>
+          <li>appbackr</li>
+          <li>AngelList</li>
+          <li>Invested.in</li>
+          <li>Quirky</li>
+        </ul>
+
+        <h2 id="block-5" class="base__section-subheader">Definition list</h2>
+
+        <h3>Standard usages</h3>
+
+        <dl>
+          <dt>Albert Einstein</dt>
+            <dd>Scientist</dd>
+          <dt>Napoleon</dt>
+            <dd>Conquerer</dd>
+          <dt>William Shakespeare</dt>
+            <dd>Poet</dd>
+          <dt>Abraham Lincoln</dt>
+            <dd>President</dd>
+          <dt>Karl Marx</dt>
+            <dd>Philosopher</dd>
+          <dt>Thomas Jefferson</dt>
+            <dd>Founding Father</dd>
+          <dt>Elizabeth I of England</dt>
+            <dd>Queen</dd>
+        </dl>
+
+        <h3>Multiple terms or descriptions</h3>
+
+        <dl>
+          <dt>Abraham Lincoln</dt>
+            <dd>President</dd>
+            <dd>Self-educated lawyer</dd>
+            <dd>Author of the Gettysburg Address</dd>
+          <dt>Charles Darwin</dt>
+          <dt>Isaac Newton</dt>
+          <dt>Albert Einstein</dt>
+            <dd>Scientist</dd>
+          <dt>Thomas Jefferson</dt>
+            <dd>President</dd>
+            <dd>Founding Father</dd>
+        </dl>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h1 id="forms" class="base__section-header">Form elements</h1>
+
+        <!--
+        TODO:
+        Add advanced form elements such as sliders and progress bars
+        -->
+
+        <form action="#">
+          <table>
+            <tr>
+              <td><label for="f1">Optional Text input:</label></td>
+              <td><input type="text" id="f1" value="input text"></td>
+            </tr>
+            <tr>
+              <td><label for="rt1">Required Text input:</label></td>
+              <td><input type="text" id="rt1" required></td>
+            </tr>
+            <tr>
+              <td><label for="twp1">Text input with pattern requirement and placeholder:</label></td>
+              <td><input type="text" pattern="\d{5}(-\d{4})?" title="a US Zip code, with or without the +4 exension" placeholder="12345-6789"/></td>
+            </tr>
+            <tr>
+              <td><label for="s1">Search input:</label></td>
+              <td><input type="search" id="s1"></td>
+            </tr>
+            <tr>
+              <td><label for="e1">Email input:</label></td>
+              <td><input type="email" id="e1"></td>
+            </tr>
+            <tr>
+              <td><label for="u1">URL input:</label></td>
+              <td><input type="url" id="u1"></td>
+            </tr>
+            <tr>
+              <td><label for="pw">Password input:</label></td>
+              <td><input type="password" id="pw" value="password"></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input type="radio" id="f2-1" name="f2"> <label for="f2-1">Radio option 1</label>
+                <input type="radio" id="f2-2" name="f2"> <label for="f2-2">Radio option 2</label>
+                <input type="radio" id="f2-3" name="f2"> <label for="f2-3">Radio option 3</label>
+                <input type="radio" id="f2-4" name="f2"> <label for="f2-4">Radio option 4</label>
+                <input type="radio" id="f2-5" name="f2"> <label for="f2-5">Radio option 5</label>
+              </td>
+            </tr>
+
+            <tr>
+              <td><label for="f3">Checkbox input:</label></td>
+              <td><input type="checkbox" id="f3"></td>
+            </tr>
+            <tr>
+              <td><label for="f4">Select field:</label></td>
+              <td><select id="f4"><option>Option 01</option><option>Option 02</option></select></td>
+              </tr>
+            <tr>
+              <td><label for="f5">Textarea:</label></td>
+              <td><textarea id="f5" cols="30" rows="5" >Textarea text</textarea></td>
+            </tr>
+            <tr>
+              <td><label for="f6">Input Button:</label></td>
+              <td> <input type="button" id="f6" value="Button text"></td>
+            </tr>
+            <tr>
+              <td><label for="f7">Input Submit:</label></td>
+              <td> <input type="submit" id="f7" value="Button text"></td>
+            </tr>
+            <tr>
+              <td><label for="f7">&lt;button&gt; Button:</label></td>
+              <td> <button id="f7">Button text</button></td>
+            </tr>
+          </table>
+        </form>
+
+        <form action="#">
+          <fieldset>
+            <legend>Form fieldset and legend (Note: The presence of a legend throws off the vertical rhythm when content is applied)</legend>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h1 id="tables" class="base__section-header">Tables</h1>
+        <table class="table">
+          <caption>Since the early days of the web, there have been many versions of HTML</caption>
+          <thead>
+            <tr>
+              <th>Version</th>
+              <th>Year</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <td colspan="2"><a href="http://www.w3schools.com/html/html5_intro.asp">From W3Schools</a></td>
+            </tr>
+          </tfoot>
+          <tbody>
+            <tr>
+              <td>Tim Berners-Lee invented www</td>
+              <td>1989</td>
+            </tr>
+            <tr>
+              <td>Tim Berners-Lee invented HTML</td>
+              <td>1991</td>
+            </tr>
+            <tr>
+              <td>Dave Raggett drafted HTML+</td>
+              <td>1993</td>
+            </tr>
+            <tr>
+              <td>HTML Working Group defined HTML 2.0</td>
+              <td>1995</td>
+            </tr>
+            <tr>
+              <td>W3C Recommended HTML 3.2</td>
+              <td>1997</td>
+            </tr>
+            <tr>
+              <td>W3C Recommended HTML 4.01</td>
+              <td>1999</td>
+            </tr>
+            <tr>
+              <td>W3C Recommended XHTML 1.0</td>
+              <td>2000</td>
+            </tr>
+            <tr>
+              <td>HTML5 WHATWG First Public Draft</td>
+              <td>2008</td>
+            </tr>
+            <tr>
+              <td>HTML5 WHATWG Living Standard</td>
+              <td>2012</td>
+            </tr>
+            <tr>
+              <td>HTML5 W3C Final Recommendation</td>
+              <td>2014</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table">
+          <caption>Table with &lt;th&gt;'s in table body</caption>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Column heading</th>
+              <th>Column heading</th>
+              <th>Column heading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td>Column content</td>
+              <td>Column content</td>
+              <td>Column content</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>Column content</td>
+              <td>Column content</td>
+              <td>Column content</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>Column content</td>
+              <td>Column content</td>
+              <td>Column content</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td>Column content</td>
+              <td>Column content</td>
+              <td>Column content</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h1 id="components" class="base__section-header">UI Components</h1>
+
+        <h2 id="components-1" class="base__section-subheader">Buttons</h2>
+
+        <h2 id="components-2" class="base__section-subheader">Navigation</h2>
+
+        <h2 id="components-3" class="base__section-subheader">Media</h2>
+
+        <div style="max-width: 600px">
+          <div class="responsive-video--4x3">
+            <iframe width="420" height="315" src="https://www.youtube.com/embed/aHpDPuh8A2Q" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h1 id="icons" class="base__section-header">Icons</h1>
+        <p class="icon--home"> home</p>
+        <p class="icon--phone"> phone</p>
+        <p class="icon--envelop"> envelop</p>
+        <p class="icon--location"> location</p>
+        <p class="icon--bubble"> bubble</p>
+        <p class="icon--quote"> quote</p>
+        <p class="icon--spinner"> spinner</p>
+        <p class="icon--bin"> bin</p>
+        <p class="icon--menu"> menu</p>
+        <p class="icon--link"> link</p>
+        <p class="icon--smile"> smile</p>
+        <p class="icon--info"> info</p>
+        <p class="icon--cancel"> cancel</p>
+        <p class="icon--cross"> cross</p>
+        <p class="icon--check"> check</p>
+        <p class="icon--enter"> enter</p>
+        <p class="icon--exit"> exit</p>
+        <p class="icon--checkbox-checked"> checkbox-checked</p>
+        <p class="icon--checkbox-unchecked"> checkbox-unchecked</p>
+        <p class="icon--radio-checked"> radio-checked</p>
+        <p class="icon--radio-unchecked"> radio-unchecked</p>
+        <p class="icon--google-plus"> google-plus</p>
+        <p class="icon--facebook"> facebook</p>
+        <p class="icon--instagram"> instagram</p>
+        <p class="icon--twitter"> twitter</p>
+        <p class="icon--feed"> feed</p>
+        <p class="icon--github"> github</p>
+      </div>
+    </section>
+  </body>
+</html>

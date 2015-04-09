@@ -1,0 +1,3 @@
+@function font-url($path) {
+  @return url("#{ $http-path + $fonts-dir + "/" + $path }");
+}

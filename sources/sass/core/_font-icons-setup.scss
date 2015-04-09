@@ -1,0 +1,69 @@
+/**
+ * =============================================================================
+ * Icon font
+ * Using fonts for icons rather than svg only means IE8 and old Android (v4.3)
+ * is supported.
+ * Also using a font is similar to using a sprite, as only one HTTP request is
+ * needed.
+ *
+ * Usage:
+ * Just add svg icon to the sources/fonticons folder and this partial will automatically
+ * update when compiled
+ */
+
+
+@font-face {
+  font-family: "<%= fontName %>";
+  src: font-url('<%= fontPath %><%= fontName %>.eot');
+  src: font-url('<%= fontPath %><%= fontName %>.eot?#iefix') format('eot'),
+    font-url('<%= fontPath %><%= fontName %>.woff') format('woff'),
+    font-url('<%= fontPath %><%= fontName %>.ttf') format('truetype'),
+    font-url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
+}
+
+// ---------------------------------------------------------------------------
+// Font icon base styles
+
+%font-icon-base {
+  font: {
+    family: "<%= fontName %>";
+    style: normal;
+    variant: normal;
+    weight: normal;
+  }
+  height: 1em;
+  line-height: 1em;
+  speak: none;
+  text-decoration: none;
+  text-indent: 0; // avoiding offset in conjuction with %icon-only
+  text-transform: none;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+// ---------------------------------------------------------------------------
+// Font icons map
+
+$icons : (
+<% _.each(glyphs, function(glyph) { %>
+  <%= glyph.fileName %> : "\<%= glyph.codePoint %>",<% }); %>
+);
+
+// ---------------------------------------------------------------------------
+// Font icon mixin
+
+@mixin font-icon($filename, $insert: after) {
+  &:#{$insert} {
+    @extend %font-icon-base;
+    content: map-get($icons, $filename);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Font icon examples
+
+<% _.each(glyphs, function(glyph) { %>.font-icon--<%= glyph.fileName %> {
+  @include font-icon(<%= glyph.fileName %>);
+}
+<% }); %>

@@ -1,0 +1,33 @@
+/**
+ * Form element base styles
+ */
+
+textarea,
+[type="url"],
+[type="file"],
+[type="text"],
+[type="date"],
+[type="time"],
+[type="week"],
+[type="email"],
+[type="month"],
+[type="color"],
+[type="number"],
+[type="search"],
+[type="password"],
+[type="datetime"],
+[type="datetime-local"] {
+  border: 1px solid $color-border;
+  font-weight: inherit;
+  @include rem(padding, 8px 6px);
+  @include rem(width, 220px);
+}
+
+fieldset {}
+
+/**
+ * FIXME:
+ * The presence of a legend throws off the vertical rhythm
+ * There seems to be a gap that isn't caused by margin or padding
+ */
+legend { @include rem(padding, 0 2px); }

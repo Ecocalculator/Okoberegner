@@ -1,0 +1,162 @@
+/**
+ * Basic vertical rhythm styles
+ */
+
+// Initiate vertical rhythm
+@include establish-baseline;
+
+body {
+  @if $debug {
+    background: image-url("vertical-rhythm-24px.png") repeat;
+    @include at-retina {
+      background-image: image-url("vertical-rhythm-24px@2x.png");
+      background-size: ( image-width("vertical-rhythm-24px@2x.png") / 2 ) auto;
+    }
+  }
+}
+
+/**
+ * =============================================================================
+ * Typography
+ */
+
+// Headers
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { @include rhythm-spacing(2, 1); }
+
+h1 { @include rhythm-font-size($font-size-giga); }
+h2 { @include rhythm-font-size($font-size-kilo); }
+h3 { @include rhythm-font-size($font-size-deca); }
+h4 { @include rhythm-font-size($font-size-zero); }
+h5 { @include rhythm-font-size($font-size-deci); }
+h6 { @include rhythm-font-size($font-size-centi); }
+
+// Paragraphs
+p { @include rhythm-spacing; }
+
+hr {
+  border: none;
+  @include rhythm-rule;
+}
+
+// Styling code block
+pre {
+  @include leader;
+  @include trailer;
+  @include rhythm-borders(1/2);
+}
+
+// Fixing vertical rhythm for all inline elements
+// List taken from:
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elemente
+b, big, i, small, tt,
+abbr, acronym, cite, code, dfn, em, kbd, strong, samp, var,
+a, bdo, br, img, map, object, q, script, span, sub, sup,
+button, input, label, select, textarea
+{ line-height: 1; }
+
+
+/**
+ * =============================================================================
+ * Tables
+ */
+
+
+table { @include rhythm-spacing; }
+
+td,
+th { padding: 0; } // fixing vertical rhythm
+
+.table {
+  caption,
+  th,
+  td { @include rhythm-borders(1/2); }
+
+  // Because of the way borders are applied to table cells
+  // we need to add full padding to them to keep the rhythm
+  th,
+  td { @include padding-trailer(1/2); }
+
+  caption { border-bottom: none; }
+}
+
+/**
+ * =============================================================================
+ * Lists
+ */
+
+ol, ul {
+  @include leader;
+  @include trailer;
+}
+
+
+/**
+ * =============================================================================
+ * Forms
+ */
+
+textarea,
+[type="url"],
+[type="file"],
+[type="text"],
+[type="date"],
+[type="time"],
+[type="week"],
+[type="email"],
+[type="month"],
+[type="color"],
+[type="number"],
+[type="search"],
+[type="password"],
+[type="datetime"],
+[type="datetime-local"] {
+  @include rhythm-font-size($font-size-zero);
+  @include rhythm-spacing(1/2);
+  @include rhythm-borders(1/2);
+}
+
+textarea { height: rhythm(4); }
+
+fieldset {
+  margin: 0; // override normalize styles
+  min-height: rhythm();
+  @include rhythm-spacing;
+  @include rhythm-borders;
+}
+
+/**
+ * FIXME:
+ * The presence of a legend throws off the vertical rhythm
+ * There seems to be a gap that isn't caused by margin or padding
+ */
+legend {}
+
+
+/**
+ * =============================================================================
+ * Blockquote
+ */
+
+
+blockquote { @include rhythm-spacing; }
+
+.blockquote {
+  @include padding-leader(1/2);
+  @include padding-trailer(1/2);
+
+  p {
+    margin: 0;
+    @include rhythm-font-size($font-size-deca, 2);
+  }
+
+  footer,
+  cite {
+    display: block; // for supporting line-height and vertical rhythm
+    @include rhythm-font-size($font-size-centi);
+  }
+}

@@ -1,0 +1,18 @@
+/**
+ * List and definition list base styles
+ */
+
+ol, ul {
+  @include rem(margin, $element-spacing 0);
+  @include rem(padding-left, 36px);
+
+  & & { margin: 0; }
+}
+
+dl { @include rem(margin, $element-spacing 0); }
+
+dt { font-weight: bold; }
+
+dd { @include rem(margin-left, 30px); }
+
+dd + dt { @include rem(margin-top, $element-spacing / 2); }

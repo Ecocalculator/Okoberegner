@@ -1,0 +1,12 @@
+/**
+ * Stylesheet for IE8 and down - not supporting media queries
+ */
+
+// Stylesheet settings
+$breakpoint-no-queries  : true; // true: don't print media queries
+$susy-media-fallback    : true; // true: print media query fallbacks
+$px-fallback-for-rem    : true; // print px fallback for rem values
+$px-fallback-only       : true; // don't print rem values
+
+// Importing all project partials
+@import "scaffold";

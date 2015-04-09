@@ -1,0 +1,89 @@
+/**
+ * This file contains all project settings. To find all available settings,
+ * see core/_defaults.scss
+ * Put all new variables related to the project modules/partials in this file
+ * rather than in core/_defaults.scss
+ */
+
+/**
+ * =============================================================================
+ * General
+ */
+
+$debug : true;
+
+/**
+ * =============================================================================
+ * Colors
+ */
+
+/**
+ * =============================================================================
+ * Mixin
+ */
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
+// Brand colors
+$brand-color-primary    : #000; // 1st
+$brand-color-secondary  : #c0ffee; // 2nd
+$brand-color-tertiary   : #b000b5; // 3rd
+$brand-color-quaternary : #0ff1c3; // 4th
+$brand-color-quinary    : #bad; // 5th
+$brand-color-senary     : #de1e7e; // 6th
+
+// Base colors
+$white : #fff;
+$black : #000;
+
+// Text colors
+$color-text         : #555;
+$color-display      : #333;
+$color-discrete     : #999;
+$color-selection    : #313054;
+$color-selection-bg : #b7ecff;
+
+// Border colors
+$color-border : #ddd;
+
+// Link colors
+$color-link         : #015AA3;
+$color-link-hover   : lighten($color-link, 15%);
+
+// Background colors
+$color-highlight-primary    : #e7e7e7;
+$color-highlight-secondary  : #f9f9f9;
+
+/**
+ * =============================================================================
+ * Fonts and Typography
+ */
+
+// Font families
+$base-font-primary    : "roboto", "Helvetica Neue", sans-serif;
+$base-font-secondary  : serif;
+$base-font-tertiary   : sans-serif;
+
+/**
+ * =============================================================================
+ * Susy grid settings
+ */
+
+// Custom grid variables for use with Susy grid
+$grid-container-width : 78.75em; // 1260px at 16px base font size | 1140px is 71.25em | 960px is 60em
+$grid-padding         : 0.625em; // 10px at 16px base font size
+
+// Susy
+// http://susy.readthedocs.org/en/latest/settings/
+$susy : (
+  columns         : 1, // mobile first
+  gutters         : (1/4),
+  gutter-position : split, // split, inside, after, before
+  container       : $grid-container-width,
+  use-custom      : ( box-sizing : false ) // avoid compile warnings due to compass
+);
