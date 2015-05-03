@@ -88,7 +88,7 @@ gulp.task('javascripts', function() {
 gulp.task('javascripts-production', function() {
   return gulp
     .src(jsImports)
-    .pipe($.concat('main.js'))
+    .pipe($.concat('main-min.js'))
     .pipe($.uglify({
       compress: {
         warnings : true
