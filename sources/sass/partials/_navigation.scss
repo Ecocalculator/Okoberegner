@@ -12,7 +12,8 @@
   height: 100%;
   overflow: hidden;
   position: fixed;
-  
+  z-index: 3;
+
   @include use-layout(medium) {
     display: block;
     width: span(1 of 8);
@@ -48,6 +49,8 @@
       position: absolute;
         left: 50%;
         top: 0;
+      -ms-transform: translate(-50%, 0); /* IE 9 */
+      -webkit-transform: translate(-50%, 0); /* Safari */
       transform: translate(-50%, 0);
     }
 

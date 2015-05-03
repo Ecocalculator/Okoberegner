@@ -29,11 +29,29 @@ body {
   }
 }
 
+.wrapper {
+  box-sizing: border-box;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
 .clearfix { @extend %clearfix; }
 
 .section {}
 
+.view {
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  width: 100%;
+}
+
 .content {
+  min-height: 100%;
+  position: relative;
   width: 100%;
 
   //.is-loading { background-color: pink; }
@@ -62,4 +80,24 @@ body {
   // Manual min-width for ie8
   // Based on xlarge's query min-width
   @if $susy-media-fallback { min-width: 1000px; }
+}
+
+.gradient {
+  background: #071c27;
+  background: linear-gradient(to bottom, #071c27 0%, #071c27 100%);
+  color: $white;
+  overflow: visible;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -400px;
+    left: 0;
+    right: 0;
+    height: 400px;
+    box-shadow: inset 0 -300px 200px -100px #071c27;
+    z-index: 2;
+    pointer-events: none;
+  }
 }

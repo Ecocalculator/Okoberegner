@@ -25,9 +25,15 @@
     &:hover {
       .recipes-list__picture {
         opacity: 0.4;
+        -ms-transform: scale3d(1.1, 1.1, 1);
+        -webkit-transform: scale3d(1.1, 1.1, 1);
         transform: scale3d(1.1, 1.1, 1);
       }
-      .recipes-list__text { transform: translate3d(0, 0, 0); }
+      .recipes-list__text {
+        -ms-transform: translate3d(0, 0, 0); /* IE 9 */
+        -webkit-transform: translate3d(0, 0, 0); /* Safari */
+        transform: translate3d(0, 0, 0);
+      }
     }
   }
 
@@ -79,8 +85,10 @@
     text-transform: none;
     font-weight: 500;
     font-size: 75%;
+    -ms-transform: translate3d(0, 230px, 0);
+    -webkit-transform: translate3d(0, 230px, 0);
     transform: translate3d(0, 230px, 0);
-    @include transition(transform, 0.35s, ease-in-out);
+    @include transition(all, 0.35s, ease-in-out);
 
     &:first-child { transition-delay: 0s; }
     &:first-child + p { transition-delay: 0.05s; }
