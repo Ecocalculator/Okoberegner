@@ -43,8 +43,9 @@ body {
 .view {
   -webkit-overflow-scrolling: touch;
   height: 100%;
+  margin-left: 10%;
   position: relative;
-  width: 100%;
+  width: 90%;
 }
 
 .content {
@@ -53,15 +54,6 @@ body {
   width: 100%;
 
   //.is-loading { background-color: pink; }
-  @include use-layout(medium) {
-    @include span(7 of 8);
-    @include push(1);
-  }
-
-  @include use-layout(large) {
-    @include span(11 of 12);
-    @include push(1);
-  }
 }
 
 .container {
