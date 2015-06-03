@@ -1,0 +1,89 @@
+.video {
+
+  position: relative;
+  height: 100%;
+
+  &--parallax {
+    background-size: cover;
+    background-attachment: scroll;
+    text-align: center;
+    padding-bottom: 56.25%;
+
+    .video__source {
+      -moz-backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      background-size: cover;
+      position: fixed;
+        left: 0;
+        top: 0;
+    }
+
+    .video__text-container {
+      position: fixed;
+        top: 17%;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  &__source {
+    display: inherit;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__overlay {
+    height: 100%;
+    position: absolute;
+     top: 0;
+    width: 100%;
+  }
+
+  &__text-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+
+  &__headline {
+    color: $white;
+    font-weight: 200;
+    line-height: 1.2;
+    @include font-size($font-size-tera);
+  }
+
+  &__subheadline {
+    color: $white;
+    display: block;
+    font-weight: 400;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    @include font-size($font-size-centi);
+  }
+
+  &__link {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+    background-color: $green;
+    border: 0 none;
+    border-radius: 2px 2px 2px 2px;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    padding: 7px 10px;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+
+    &:hover {
+      background: none repeat scroll 0 0 darken($green, 10%);
+      color: $white;
+    }
+  }
+
+}

@@ -8,27 +8,52 @@
   </head>
   <body>
 
-    <section class="navigation">
-      <div class="navigation__container">
-        <a href="/">
-          <img src="/assets/images/logo.jpg" width="100%">
-        </a>
-        <nav class="navigation__top">
-          <a class="navigation__item--search js-load" href="/#!/content/search.html"><span class="navigation__text">Search</span></a>
-          <a class="navigation__item--shop js-load" href="/#!/content/indkob.html"><span class="navigation__text">Indkøb</span></a>
-          <a class="navigation__item--plan js-load" href="/#!/content/madplan.html"><span class="navigation__text">Madplan</span></a>
-          <a class="navigation__item--meal js-load" href="/#!/content/maaltid.html"><span class="navigation__text">Måltid</span></a>
-        </nav>
-        <nav class="navigation__bottom">
-          <a class="navigation__item--profile js-load" href="/#!/about.html"><span class="navigation__text">Mig</span></a>
-          <a class="navigation__item--settings js-load" href="/#!/settings.html"><span class="navigation__text">Indstillinger</span></a>
-        </nav>
+    <div class="wrapper">
+      <div class="navigation">
+        <div class="navigation__container">
+          <a href="/">
+            <img src="/assets/images/logo.jpg" width="100%">
+          </a>
+          <nav class="navigation__top">
+            <a class="navigation__item--search js-load" href="/#!/content/search.html"><span class="navigation__text">Search</span></a>
+            <a class="navigation__item--shop js-load" href="/#!/content/indkob.html"><span class="navigation__text">Indkøb</span></a>
+            <a class="navigation__item--plan js-load" href="/#!/content/madplan.html"><span class="navigation__text">Madplan</span></a>
+            <a class="navigation__item--meal js-load" href="/#!/content/maaltid.html"><span class="navigation__text">Måltid</span></a>
+          </nav>
+          <nav class="navigation__bottom">
+            <a class="navigation__item--profile js-load" href="/#!/about.html"><span class="navigation__text">Mig</span></a>
+            <a class="navigation__item--settings js-load" href="/#!/settings.html"><span class="navigation__text">Indstillinger</span></a>
+          </nav>
+        </div>
       </div>
-    </section>
 
-    <div class="content js-load-target"></div>
+      <div class="view">
+        <!-- <section class="text-image-fixed">
+          <div class="text-image-fixed__container">
+            <div class="text-image-fixed__text-container">
+              <h1 class="text-image-fixed__headline">Shift to the Cloud</h1>
+              <span class="text-image-fixed__subheading">Enlightened visibility, detection and response</span>
+            </div>
+          </div>
+        </section>
+        <div class="gradient"></div> -->
 
-    <footer></footer>
+        <section class="video js-inview" data-enterview-class="is-inview" data-exitview-class="is-outofview">
+          <div class="video__overlay" style="opacity: 0.4; background-color: #000;"></div>
+          <video autoplay loop preload="auto" class="video__source" src="http://player.vimeo.com/external/103432016.hd.mp4?s=bb57f2fa9774517f89a71b74d475be01"></video>
+          <div class="video__text-container">
+            <h1 class="video__headline">How can we help you?</h1>
+            <h2 class="video__subheadline">Create and share your recipies</h2>
+            <a href="#" class="video__link">Sign up here</a>
+          </div>
+        </section>
+
+        <div class="content js-load-target"></div>
+      </div>
+
+
+      <footer></footer>
+    </div>
 
     <!-- JavaScript at the bottom for fast page loading -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

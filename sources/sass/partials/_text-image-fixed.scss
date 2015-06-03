@@ -1,0 +1,55 @@
+.text-image-fixed {
+  color: $white;
+  background: url('/assets/images/hero-platform.jpg') 50% 0 no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  height: 100%;
+  min-height: 500px;
+  position: relative;
+    left: 0;
+    top: 0;
+  width: 100%;
+  z-index: 0;
+
+  &__container {
+    height: 100%;
+    margin: 0 auto;
+    position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+    transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    z-index: 10;
+  }
+
+  &__text-container {
+    margin-top: -50px;
+    font-family: 'roboto';
+    position: relative;
+      left: 10%;
+      top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    width: 90%;
+    z-index: 2;
+  }
+
+  &__headline {
+    color: $white;
+    font-weight: 200;
+    @include font-size($font-size-tera);
+  }
+
+  &__subheading {
+    display: block;
+    font-weight: 400;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    @include font-size($font-size-centi);
+  }
+}
