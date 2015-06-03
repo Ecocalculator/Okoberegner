@@ -4,7 +4,7 @@
  */
 
 .navigation {
-  background-color: lighten($black, 25%);
+  background-color: $white;
   display: none;
   font-family: "roboto";
   font-size: 12px;
@@ -29,7 +29,7 @@
   }
 
   &__item {
-    color: darken($white, 25%);
+    color: $green;
     display: block;
     margin-bottom: 25px;
     position: relative;
@@ -39,9 +39,9 @@
 
     &.is-active,
     &:hover {
-      color: $white;
+      color: darken($green, 15%);
 
-      .navigation__text { color: $white; }
+      .navigation__text { color: darken($green, 15%); }
     }
 
     &:after {
@@ -86,7 +86,7 @@
   }
 
   &__text {
-    color: lighten($black, 25%);
+    color: $green;
     display: block;
     padding-top: 30px;
     @include transition(color, 0.3s, ease-in-out);

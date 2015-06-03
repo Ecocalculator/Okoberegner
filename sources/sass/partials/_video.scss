@@ -67,24 +67,21 @@
   &__link {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-touch-callout: none;
-    background-color: #46b98a;
+    background-color: $green;
     border: 0 none;
     border-radius: 2px 2px 2px 2px;
-    color: #FFFFFF;
+    color: $white;
     cursor: pointer;
     display: inline-block;
-    font-family: Arial,sans-serif;
     font-size: 18px;
     padding: 7px 10px;
     text-decoration: none;
-    width: 16.795%; /* auto */
-    text-align: center; /* DELETE WHEN WIDTH AUTO */
     transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -webkit-transition: all 0.3s ease 0s;
 
     &:hover {
-      background: none repeat scroll 0 0 lighten(#46b98a, 10%);
+      background: none repeat scroll 0 0 darken($green, 10%);
       color: $white;
     }
   }
